@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/login.css') }}">
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <a href="{{ url_for('home') }}">
+        <img src="https://user-images.githubusercontent.com/63377582/230875073-4b8a6f5d-2502-4767-98bf-09a2b41278f4.png" alt="Logo">
+    </a>
+      </div>
+
+
+      <form class="login-form" method="POST" action="{{ url_for('login') }}">
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="email" id="username" name="username" placeholder="DUT Email" required pattern="[a-z0-9._%+-]+@dut4life\.ac\.za$" title="Please enter a valid DUT email address"><br><br>
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" required minlength="6" maxlength="8"><br><br>
+        </div>
+        <input type="submit" name="login" value="Login">
+      </form>
+
+      <P>Sign In Using Your DUT Credentials</P>
+    </div>
+  </body>
+</html>

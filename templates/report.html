@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>REPORT A MAINTENANCE ISSUE</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form.css') }}">
+</head>
+<body>
+	<header>
+		<a href="{{ url_for('home') }}"><img src="https://user-images.githubusercontent.com/63377582/230875073-4b8a6f5d-2502-4767-98bf-09a2b41278f4.png"></a>
+	</header>
+	<main class="main">
+		<h1>REPORT A MAINTENANCE ISSUE</h1>
+		<form class="maintenance-form" method="POST" action="{{ url_for('reportsubmitted') }}" enctype="multipart/form-data">
+			<div class="form-group">
+				<label for="campus">1. Campus:</label>
+				<select id="campus" name="campus" required>
+					<option value="" disabled selected>Select a campus</option>
+					<option value="Steve Biko Campus">Steve Biko Campus</option>
+					<option value="ML Sultan Campus">ML Sultan Campus</option>
+					<option value="Brickfield Campus">Brickfield Campus</option>
+					<option value="City Campus">City Campus</option>
+					<option value="Ritson Campus">Ritson Campus</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="faculty">2. Faculty:</label>
+				<select id="faculty" name="faculty" required>
+					<option value="" disabled selected>Select a faculty</option>
+					<option value="Accounting and Informatics">Accounting and Informatics</option>
+					<option value="Applied Sciences">Applied Sciences</option>
+					<option value="Management Sciences">Management Sciences</option>
+					<option value="Engineering and the Built Environment">Engineering and the Built Environment</option>
+					<option value="Health Sciences">Health Sciences</option>
+					<option value="Arts and Design">Arts and Design</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="building">3. Building:</label>
+				<select id="building" name="building" required>
+					<option value="" disabled selected>Select a building</option>
+					<option value="Alan Pittendrigh Library (Steve Biko Campus)">Alan Pittendrigh Library (Steve Biko Campus)</option>
+					<option value="BM Patel Library (ML Sultan Campus)">BM Patel Library (ML Sultan Campus)</option>
+					<option value="Brickfield Library">Brickfield Library</option>
+					<option value="City Library">City Library</option>
+					<option value="Ritson Campus Hall">Ritson Campus Hall</option>
+					<option value="Hotel School">Hotel School</option>
+					<option value="Student Admissions">Student Admissions</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<label for="block">4. Block:</label>
+				<select name="block" id="block">
+                    <option value="" disabled selected>Select a block</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="G">G</option>
+                    <option value="H">H</option>
+                    <option value="I">I</option>
+                    <option value="J">J</option>
+                    <option value="K">K</option>
+                    <option value="L">L</option>
+                    <option value="M">M</option>
+                  </select>
+			</div>
+
+			<div class="form-group">
+				<label for="maintenance-issue">5. Maintenance Issue:</label>
+				<textarea id="maintenance-issue" name="maintenance-issue" maxlength="250" placeholder="Please Describe The Maintenance Issue" required></textarea>
+			</div>
+			<div class="form-group">
+                <label for="severity">6. Severity:</label>
+                <select id="severity" name="severity" required>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="image">Upload an image:</label>
+                <input type="file" id="image" name="image">
+            </div>
+            <form action="/thank_you" method="post">
+				<button onclick="location.href='/thank_you'">Submit Report</button>
+			  </form>
+
+        </form>
+    </main>

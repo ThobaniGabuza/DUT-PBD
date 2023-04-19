@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DUT Safety & Maintenance HOME</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="icon" href="https://raw.githubusercontent.com/ThobaniGabuza/DUT-PBD/main/favicon.png" type="image/x-icon">
+  </head>
+  <body>
+
+    <header class="header">
+
+        <div class="logo">
+          <a href="{{ url_for('home') }}">
+            <img src="https://user-images.githubusercontent.com/63377582/230875073-4b8a6f5d-2502-4767-98bf-09a2b41278f4.png" alt="DUT">
+          </a>
+        </div>
+
+      <nav>
+          <ul>
+            <li><a href="{{ url_for('home') }}">HOME</a></li>
+            <li><a href="{{ url_for('news') }}">NEWS</a></li>
+            <li><a href="{{ url_for('departments') }}">DEPARTMENTS</a></li>
+            <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+            <li><button onclick="location.href='/login'">SIGN IN</button></li>
+          </ul>
+        </nav>
+
+    </header>
+    <main>
+        <a href="{{ url_for('home') }}">
+          <img src="https://raw.githubusercontent.com/ThobaniGabuza/DUT-PBD/main/image1.png" alt="DUT" class="main-image">
+        </a>
+
+    </main>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Contact Us</h3>
+            <p> P O Box 1334<br>Durban, KwaZulu-Natal 4000<br>Phone:<a href="tel:0313732000">(031) 373 2000 (DBN)</a><br>Email:<a href="mailto:info@dut.ac.za">info@dut.ac.za</a><br><a href="https://www.google.com/maps/place/Durban+University+of+Technology+Steve+Biko+Campus,+Musgrave,+Berea,+4001/@-29.853769,30.9972131,16z/data=!3m1!4b1!4m6!3m5!1s0x1ef7a9e89e4cd98d:0x95e25e2cd5e9f213!8m2!3d-29.8536128!4d31.0061131!16s%2Fg%2F11bw22hvf4y" target="_blank">View On Google Maps</a></p>
+
+          </div>
+          <div class="col-md-6">
+            <h3>Connect With Us</h3>
+            <ul class="list-unstyled">
+              <li><a href="https://www.facebook.com/DurbanUniversityofTechnology/" target="_blank"><img src="https://raw.githubusercontent.com/ThobaniGabuza/DUT-PBD/main/fb%20logo.png" alt="Facebook"></a></li>
+              <li><a href="https://twitter.com/dut_tweets?lang=en" target="_blank"><img src="https://raw.githubusercontent.com/ThobaniGabuza/DUT-PBD/main/twitter%20logo.png" alt="Twitter"></a></li>
+              <li><a href="https://www.instagram.com/dut_official1/?hl=en" target="_blank"><img src="https://raw.githubusercontent.com/ThobaniGabuza/DUT-PBD/main/instagram%20logo.png" alt="Instagram"></a></li>
+
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>&copy;Copyright 2023 Durban University Of Technology</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

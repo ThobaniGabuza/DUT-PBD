@@ -1,0 +1,66 @@
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>DUT Safety & Maintenance</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/admin.css') }}">
+        <link rel="icon" href="https://raw.githubusercontent.com/ThobaniGabuza/DUT-PBD/main/favicon.png" type="image/x-icon">
+      </head>
+      <body>
+
+        <header class="header">
+
+            <div class="logo">
+              <a href="{{ url_for('home') }}">
+                <img src="https://user-images.githubusercontent.com/63377582/230875073-4b8a6f5d-2502-4767-98bf-09a2b41278f4.png" alt="DUT">
+              </a>
+            </div>
+ <main>
+          <nav>
+              <ul>
+                <li><a href="{{ url_for('admin') }}">ADMIN</a></li>
+                <li><a href="{{ url_for('home') }}">HOME</a></li>
+                <li><a href="{{ url_for('news') }}">NEWS</a></li>
+                <li><a href="{{ url_for('departments') }}">DEPARTMENTS</a></li>
+                <li><a href="{{ url_for('about') }}">ABOUT</a></li>
+                <li><button onclick="location.href='/login'">SIGN IN</button></li>
+              </ul>
+            </nav>
+        <section>
+
+        <h1>Admin Panel</h1>
+        <p>Welcome, admin!</p>
+
+        <table>
+          <tr>
+              <th>ID</th>
+              <th>Campus</th>
+              <th>Faculty</th>
+              <th>Building</th>
+              <th>Block</th>
+              <th>Issue</th>
+              <th>Severity</th>
+              <th>Image</th>
+          </tr>
+          {% for report in reports %}
+              <tr>
+                  <td>{{ report[0] }}</td>
+                  <td>{{ report[1] }}</td>
+                  <td>{{ report[2] }}</td>
+                  <td>{{ report[3] }}</td>
+                  <td>{{ report[4] }}</td>
+                  <td>{{ report[5] }}</td>
+                  <td>{{ report[6] }}</td>
+                  <td><img src="{{ url_for('static', filename='uploads/' + report[7]) }}" height="100"></td>
+              </tr>
+          {% endfor %}
+      </table>
+      <p><a href="#">Logout</a></p>
+      
+       </section>
+  </main>
+        </header>
+      </body>
+      </html>
